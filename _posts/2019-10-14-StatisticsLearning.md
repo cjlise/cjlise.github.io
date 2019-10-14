@@ -3,7 +3,7 @@ title: "Statistics Learning Project: Normal distribution and goodness of fit tes
 date: 2019-10-14
 tags: [Statistics, Tests, distribution, Machine Learning, probability]
 header: 
-   image: "images\MachineLearning/landscape-4527525_200.jpg"
+   image: "/images/MachineLearning/landscape-4527525_200.jpg"
 excerpt: "Statistics, Tests, distribution, Machine Learning, probability"
 ---
 
