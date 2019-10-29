@@ -53,8 +53,8 @@ ORDER BY AbsoluteValueDifference DESC, TotalNBOrders, CustomerName
 For the CustomerId = 1060 (CustomerName = 'Anand Mudaliyar')   
 Identify the first InvoiceLine of his first Invoice, where "first" means the lowest respective IDs, and write an update query increasing the UnitPrice of this InvoiceLine by 20.
 
-A screenshot of the expected resultset after the update query is shown below:   
-![resultset02](/images/SoftwareEngineering/SQLComplexQuery02.jpg "Query 2 resultset.")   
+A screenshot of the expected resultset after the update query is shown below:    
+![resultset02](/images/SoftwareEngineering/SQLComplexQuery020.jpg "Query 2 resultset.")   
 
 ```sql
 UPDATE Sales.InvoiceLines
