@@ -11,14 +11,14 @@ excerpt: "Software Engineering, SQL, RDBMS, SQLServer, Database"
 The SQL queries below are some examples of complex SQL queries mainly on the sample Microsoft database [Wide World Importers sample database](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) and running on SQLServer. 
 
 * Returns a resultset  with the following information: 
-CustomerID|	CustomerName|	TotalNBOrders|	TotalNBInvoices|	OrdersTotalValue|	InvoicesTotalValue|	AbsoluteValueDifference|
+|CustomerID|	CustomerName|	TotalNBOrders|	TotalNBInvoices|	OrdersTotalValue|	InvoicesTotalValue|	AbsoluteValueDifference|
 ----------------------------------------------------------------------------------------------------------
-1060 |	Anand Mudaliyar |	4	|4	|7240.2|	7240.2|	0.00|
-----------------------------------------------------------------------------------------------------------
-1059	Jibek Juniskyzy	8	8	13208.1	13208.1	0.00,
-----------------------------------------------------------------------------------------------------------
-1061	Agrita Abele	9	9	22829.65	22829.65	0.00,
-----------------------------------------------------------------------------------------------------------
+|1060 |	Anand Mudaliyar |	4	|4	|7240.2|	7240.2|	0.00|
+
+|1059 |	Jibek Juniskyzy	|8	|8	|13208.1	|13208.1 |	0.00|
+
+|1061 |Agrita Abele	    |9	|9	|22829.65	|22829.65 |	0.00|
+
 
 ...
 
