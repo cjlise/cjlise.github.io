@@ -10,7 +10,7 @@ excerpt: "Software Engineering, SQL, RDBMS, SQLServer, Database"
 # Some complex SQL queries
 The SQL queries below are some examples of complex SQL queries mainly on the sample Microsoft database [Wide World Importers sample database](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) and running on SQLServer. 
 
-* What is the query which reports the consistency between orders and their attached invoices?  
+## What is the query which reports the consistency between orders and their attached invoices?  
 The resultset should report for each (CustomerID, CustomerName)
  1. the total number of orders: TotalNBOrders
  2. the number of invoices converted from an order: TotalNBInvoices
@@ -47,6 +47,32 @@ WHERE A.CustomerID = C.CustomerID
 GROUP BY A.CustomerID, C.CustomerName
 ORDER BY AbsoluteValueDifference DESC, TotalNBOrders, CustomerName
 
+```
+
+## Update a specific UnitPrice of a product   
+For the CustomerId = 1060 (CustomerName = 'Anand Mudaliyar')   
+Identify the first InvoiceLine of his first Invoice, where "first" means the lowest respective IDs, and write an update query increasing the UnitPrice of this InvoiceLine by 20.
+
+A screenshot of the expected resultset after the update query is shown below:   
+![resultset02](/images/SoftwareEngineering/SQLComplexQuery02.jpg "Query 2 resultset.")   
+
+```sql
+UPDATE Sales.InvoiceLines
+SET Sales.InvoiceLines.UnitPrice = Sales.InvoiceLines.UnitPrice + 20
+WHERE
+Sales.InvoiceLines.InvoiceLineID = 
+(
+	SELECT MIN(MIL.InvoiceLineID)
+	FROM Sales.InvoiceLines AS MIL
+	WHERE MIL.InvoiceID =
+	(
+		SELECT MIN(I.InvoiceId)  
+		FROM Sales.Invoices AS I, Sales.InvoiceLines AS IL
+		WHERE 
+			I.InvoiceID = IL.InvoiceID
+			AND I.CustomerID = 1060
+	)
+)
 ```
 
 
