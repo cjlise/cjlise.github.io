@@ -10,9 +10,19 @@ excerpt: "Software Engineering, SQL, RDBMS, SQLServer, Database"
 # Some complex SQL queries
 The SQL queries below are some examples of complex SQL queries mainly on the sample Microsoft database [Wide World Importers sample database](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) and running on SQLServer. 
 
-* What is the query to return a resultset  with the following information? 
+* What is the query which reports the consistency between orders and their attached invoices?  
+The resultset should report for each (CustomerID, CustomerName)
+ 1. the total number of orders: TotalNBOrders
+ 2. the number of invoices converted from an order: TotalNBInvoices
+ 3. the total value of orders: OrdersTotalValue
+ 4. the total value of invoices: InvoicesTotalValue
+ 5. the absolute value of the difference between c - d: AbsoluteValueDifference   
+   
+ Here is a screenshot of the expected resultset:  
 ![resultset](/images/SoftwareEngineering/SQLComplexQuery01.jpg "Query 1 resultset.")
 
+The tables involved in the query and their links are shown in the screenshot below:  
+![DB Schema subset](/images/SoftwareEngineering/DB-Schema01.png "Query 1 schema.")
 
 The SQL query is listed below: 
 ```sql
@@ -38,6 +48,8 @@ GROUP BY A.CustomerID, C.CustomerName
 ORDER BY AbsoluteValueDifference DESC, TotalNBOrders, CustomerName
 
 ```
+
+
 
 
 
