@@ -245,6 +245,32 @@ WHERE D.RowNo <=1
 ORDER BY D.MaxLoss DESC
 ``` 
 
+## How to write a division query? 
+SQLPlayground is a sample database with 3 tables Customer, Product and purchase. 
+In the database SQLPlayground, write a SQL query selecting all the customers' data who have purchased all the products AND have bought more than 50 products in total (sum of all purchases).   
+  
+The SQL query is listed below:   
+```sql
+SELECT C.CustomerName --, SUM(PH.Qty) 
+FROM	dbo.Customer as C, dbo.Purchase AS PH
+WHERE NOT EXISTS(
+		SELECT *
+		FROM	dbo.Product as P
+		WHERE NOT EXISTS
+		(
+			SELECT *
+			FROM
+				dbo.Purchase as PU
+			WHERE
+				PU.CustomerID = C.CustomerID
+				AND PU.ProductID = P.ProductId
+		)
+)
+AND C.CustomerId = PH.CustomerId
+GROUP BY C.CustomerName
+HAVING SUM(PH.Qty) > 50
+```
+
 
 
 
