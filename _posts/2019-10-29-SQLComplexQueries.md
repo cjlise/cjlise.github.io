@@ -56,6 +56,8 @@ Identify the first InvoiceLine of his first Invoice, where "first" means the low
 A screenshot of the expected resultset after the update query is shown below:    
 ![resultset02](/images/SoftwareEngineering/SQLComplexQuery020.jpg "Query 2 resultset.")   
 
+The SQL query is listed below:   
+
 ```sql
 UPDATE Sales.InvoiceLines
 SET Sales.InvoiceLines.UnitPrice = Sales.InvoiceLines.UnitPrice + 20
@@ -198,6 +200,55 @@ BEGIN
 
 END
 ```   
+## How to write a SQL query which reports the highest loss of money from orders not being converted into invoices?
+ In the database WideWorldImporters, write a SQL query which reports the highest loss of money from orders not being converted into invoices, by customer category. The name and id of the customer who generated this highest loss must also be identified. The resultset is ordered by highest loss.  
+ 
+ A screenshot of the expected resultset after the update query is shown below:    
+![resultset02](/images/SoftwareEngineering/SQLComplexQuery04.jpg "Query 2 resultset.")   
+
+The SQL query is listed below:   
+```sql 
+SELECT  D.CustomerCategoryName, D.MaxLoss, D.CustomerName, D.CustomerID
+FROM
+(
+	SELECT DISTINCT S.CustomerCategoryName, S.MaxLoss, S.CustomerName, S.CustomerID, ROW_NUMBER() OVER (Partition by S.CustomerCategoryName  
+		            Order by S.MaxLoss DESC) AS RowNo 
+	FROM
+	(
+		SELECT CustomerCategoryName, SUM(F.UnitPrice * F.Quantity)  OVER ( Partition by CustomerCategoryName, F.CustomerName) AS MaxLoss, 
+				F.CustomerName , F.CustomerID
+		FROM
+		(
+			SELECT  C.CustomerName, C.CustomerId, C.CustomerCategoryId, L.UnitPrice, L.Quantity
+			FROM
+			(
+				SELECT  T.CustomerID, T.OrderID, OL.UnitPrice, OL.Quantity
+				FROM 
+				(
+					SELECT O.CustomerID, O.OrderID
+					FROM Sales.Orders as O
+					WHERE NOT EXISTS
+					(
+						SELECT *
+						FROM Sales.Invoices as I
+						WHERE I.OrderID = O.OrderID
+					)
+				) AS T, Sales.OrderLines AS OL
+				WHERE T.OrderID = OL.OrderID
+			) AS L, Sales.Customers AS C
+			WHERE L.CustomerID = C.CustomerID
+		) AS F, Sales.CustomerCategories AS G
+		WHERE F.CustomerCategoryID = G.CustomerCategoryID
+	) AS S 
+) AS D
+WHERE D.RowNo <=1
+ORDER BY D.MaxLoss DESC
+``` 
+
+
+
+
+
 
 
 
