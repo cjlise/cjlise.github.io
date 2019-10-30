@@ -1,6 +1,7 @@
 ---
 title: "In memory SQL division using Python"
 date: 2019-10-29
+categories: software-engineering
 tags: [Software Engineering, SQL, Python, SQLServer, Database]
 header: 
    image: "/images/DeepLearning/web-3706561_200.jpg"

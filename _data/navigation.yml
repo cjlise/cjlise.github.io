@@ -5,7 +5,7 @@ main:
   - title: "Machine Learning"   
     url: /categories/machine-learning/
   - title: "Software Engineering"   
-    url: /software-engineering/
+    url: /categories/software-engineering/
 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
