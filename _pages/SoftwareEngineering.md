@@ -9,7 +9,7 @@ header:
 ---
 
 {% assign myposts = site.posts | where:"categories","software-engineering" %}
-{% include group-by-array collection=site.posts field="tags" %}
+{% include group-by-array collection=myposts field="tags" %}
 
 {% for tag in group_names %}
   {% assign posts = group_items[forloop.index0] %}
