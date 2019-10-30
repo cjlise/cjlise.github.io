@@ -1,6 +1,7 @@
 ---
 title: "Statistics Learning Project: Normal distribution and goodness of fit tests"
 date: 2019-10-14
+categories: machine-learning
 tags: [Statistics, Tests, distribution, Machine Learning, probability]
 header: 
    image: "/images/MachineLearning/landscape-4527525_200.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "Artificial Neural Network Project: House Prices - Advanced Regression Techniques"
 date: 2019-10-25
+categories: machine-learning
 tags: [Deep Leaning, TensorFlow, Keras, Machine Learning, Linear Regression, Gradient, Tensors]
 header: 
    image: "/images/DeepLearning/web-3706561_200.jpg"

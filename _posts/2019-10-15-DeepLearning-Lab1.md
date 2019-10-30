@@ -1,6 +1,7 @@
 ---
 title: "Deep Learning Lab 1: Pytorch tensors tutorial"
 date: 2019-10-15
+categories: machine-learning
 tags: [Deep Leaning, PyTorch, Machine Learning, Linear Regression, Gradient, Tensors]
 header: 
    image: "/images/DeepLearning/web-3706561_200.jpg"

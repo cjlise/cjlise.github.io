@@ -1,6 +1,7 @@
 ---
 title: "Metaheuristics Project: Genetics Algorithms Optimization"
 date: 2019-10-13
+categories: machine-learning
 tags: [metaheuristics, optimization, data science, genetics, algorithm]
 header: 
    image: "/images/genetics/Rastrigin_function_200.jpg"
