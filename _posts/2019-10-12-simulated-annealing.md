@@ -1,7 +1,7 @@
 ---
 title: "Metaheuristics Project: Simulated Annealing"
 date: 2019-10-12
-taxonomy: machine-learning
+categories: machine-learning
 tags: [metaheuristics, optimization, data science]
 header: 
    image: "/images/annealing/annealing_200.jpg"
