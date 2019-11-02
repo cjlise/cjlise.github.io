@@ -28,7 +28,7 @@ The CSV file created is in unicode utf-8 format. Here are the instructions to lo
 
 
 The full Python code is listed below: 
-```Python
+```python
 # JobWebScrapping script
 # Script to retrieve the list of data scientist job posting from indeed.fr 
 # Scrap from indeed.fr the data scientist job for the list of region provided 
