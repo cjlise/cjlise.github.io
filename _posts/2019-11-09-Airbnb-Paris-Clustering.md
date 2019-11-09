@@ -14,6 +14,7 @@ This lab presents the step by step clustering analysis of an Airbnb Paris Listin
 * The Rmd [workbook](https://github.com/cjlise/MachineLearning/blob/master/Airbnb-clustering.Rmd)
 * The workbook [rendering in html](https://github.com/cjlise/MachineLearning/blob/master/Airbnb-clustering.html)
  
+ ![Airbnb Paris Listing](/images/MachineLearning/Airbnb-Paris-Clustering.jpg "Airbnb Paris Clustering")
 
 
 
