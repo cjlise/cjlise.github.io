@@ -1,5 +1,5 @@
 ---
-title: "Lab classification and dimensionality reduction"
+title: "Classification and dimensionality reduction"
 date: 2019-11-10
 categories: machine-learning
 tags: [Classification, Logistic Regression, Machine Learning, PCA, Python, Scikit-learn]
