@@ -28,23 +28,23 @@ The loss function is $ L(w_s, b_s) = \|y - \hat y\|^2 = \displaystyle\sum_{k=1}^
 
 And we have to minimize the loss function L to find the solution. 
 
-$\hat y = x w_s + b_s $ 
-$\hat y_k = x_k,1 w_s1 + x_k,2 w_s2 $ 
+$$\hat y = x w_s + b_s $$ 
+$$\hat y_k = x_k,1 w_s1 + x_k,2 w_s2 $$ 
 
 The loss function gradient is given by:   
-$\nabla _{w_s}L(w,b) =  \begin{bmatrix}
+$$\nabla _{w_s}L(w,b) =  \begin{bmatrix}
                           \displaystyle\sum_{k=1}^{30} -2 x_{k,1} (y_k - \hat y_k) \\
                           \displaystyle\sum_{k=1}^{30} -2 x_{k,2} (y_k - \hat y_k)
-						\end{bmatrix} = -2x^t (y - \hat y)$
+						\end{bmatrix} = -2x^t (y - \hat y)$$
 
-$\nabla _{b_s}L(w,b) =  \begin{bmatrix}
+$$\nabla _{b_s}L(w,b) =  \begin{bmatrix}
                           \displaystyle\sum_{k=1}^{30} -2  (y_k - \hat y_k) \\
                           \displaystyle\sum_{k=1}^{30} -2  (y_k - \hat y_k)
-						\end{bmatrix} $  
+						\end{bmatrix} $$  
   
 The gradient based algorithm to compute $w_s$ and $b_s$ at each iteration is: 
-* $w_s^{j+1} = w_s^j - \eta \nabla _{w_s}L(w_s^j,b_s^j)$ 
-* $b_s^{j+1} = b_s^j - \eta \nabla _{b_s}L(w_s^j,b_s^j)$  
+* $$w_s^{j+1} = w_s^j - \eta \nabla _{w_s}L(w_s^j,b_s^j)$$ 
+* $$b_s^{j+1} = b_s^j - \eta \nabla _{b_s}L(w_s^j,b_s^j)$$  
 
    
 
