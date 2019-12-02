@@ -10,7 +10,7 @@ mathjax: "true"
 ---
 
 # Deep Learning Lab 2
-This lab covers is basically a <a href="https://pytorch.org/">pyTorch </a> autograd (automatic differentiation). At the end a simple non-linear regression model is presented. In details the following topics are covered: 
+This lab covers  <a href="https://pytorch.org/">pyTorch </a> automatic differentiation (autograd). At the end a simple non-linear regression model is presented. In details the following topics are covered: 
 * Visualizing the computational graph
 * Gradient accumulation
 * Non-linear regression with a neural network
