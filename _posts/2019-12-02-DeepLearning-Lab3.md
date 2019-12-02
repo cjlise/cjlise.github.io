@@ -9,7 +9,7 @@ excerpt: "Deep Leaning, PyTorch, Machine Learning, Gradient, Tensors, Classifica
 mathjax: "true"
 ---
 
-# Deep Learning Lab 3
+# Description
 This lab shows the steps involved in the training and testing of an image classifier:    
  
 * Load and normalizing the CIFAR10 training and test datasets using torchvision

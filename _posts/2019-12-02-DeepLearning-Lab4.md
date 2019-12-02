@@ -9,7 +9,7 @@ excerpt: "Deep Leaning, PyTorch, Machine Learning, Classification, Neural Networ
 mathjax: "true"
 ---
 
-# Deep Learning Lab 4
+# Description
 The goal of this lab is to see the improvement that we can get by training a neural network with a GPU instead of a CPU. For this, we rely on the Google colab environment that allow to run Jupyter notebooks on both CPU and GPU. 
 Therefore we will see how to specify to PyTorch, the device to use for calculation. We will use the MNIST data set for this lab.    
   
