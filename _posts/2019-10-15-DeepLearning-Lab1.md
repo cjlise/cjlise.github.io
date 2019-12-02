@@ -35,7 +35,7 @@ The loss function gradient is given by:
 * $$\nabla _{w_s}L(w,b) =  \begin{bmatrix}
                           \displaystyle\sum_{k=1}^{30} -2 x_{k,1} (y_k - \hat y_k) \\
                           \displaystyle\sum_{k=1}^{30} -2 x_{k,2} (y_k - \hat y_k)
-						\end{bmatrix} = -2x^t (y - \hat y)$$    
+						\end{bmatrix} = -2x^T (y - \hat y)$$    
 
 * $$\nabla _{b_s}L(w,b) =  \begin{bmatrix}
                           \displaystyle\sum_{k=1}^{30} -2  (y_k - \hat y_k) \\
@@ -44,9 +44,9 @@ The loss function gradient is given by:
   
 The gradient based algorithm to compute $$w_s$$ and $$b_s$$ at each iteration is: 
 * $$w_s^{j+1} = w_s^j - \eta \nabla _{w_s}L(w_s^j,b_s^j)$$ 
-* $$b_s^{j+1} = b_s^j - \eta \nabla _{b_s}L(w_s^j,b_s^j)$$  
+* $$b_s^{j+1} = b_s^j - \eta \nabla _{b_s}L(w_s^j,b_s^j)$$   
 
-   
+ With $$\eta$$ the learning rate parameter.     
 
 Here is the <a href="https://colab.research.google.com/drive/1T6x-ToztavZ1DJf5FBFDQQA54rm6xo6q">link</a> to access the notebook on Google colab. It doesn't work directly on github. 
 
