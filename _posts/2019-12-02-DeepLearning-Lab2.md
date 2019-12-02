@@ -18,15 +18,16 @@ This lab covers is basically a <a href="https://pytorch.org/">pyTorch </a> autog
 ## Non-linear regression 
 The sample in the Jupyter notebook present the non-linear model below: 
 $$y = -(0.1 * x_1^2 + 3 sin(0.1 x_2) +0.1)$$   
+![Non-linear function](/images/DeepLearning/Labs/Lab2-NeuralNetwork.jpg "Non-linear function")
 
-We will solve this problem using a simple neural network using a single hidden layer with no activation function.   
-$$h = w_1 x$$ 
-$$ h.relu = |h|$$     
-$$\hat y = w_2 h.relu $$  
+We will solve this problem using a simple neural network using a single hidden layer with no activation function:   
+![Neural Network](/images/DeepLearning/Labs/Lab2-NeuralNetwork.jpg "Neural Network")
+ 
 
  
 
 Here is the <a href="https://colab.research.google.com/drive/1a2tyhCuuOAyX47dpv7jFf_QmIH9rtFCC">link</a> to access the notebook on Google colab. It doesn't work directly on github. 
+
 
 
 
