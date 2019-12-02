@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning Lab 2: Autograd: automatic differentiation"
+title: "Deep Learning Lab 2: Autograd - automatic differentiation"
 date: 2019-12-02
 categories: machine-learning
 tags: [Deep Leaning, PyTorch, Machine Learning, Gradient, Tensors, Autograd, Non-linear regression]
