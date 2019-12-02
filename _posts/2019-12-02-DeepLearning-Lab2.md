@@ -15,9 +15,9 @@ This lab covers is basically a <a href="https://pytorch.org/">pyTorch </a> tenso
 * Broadcasting 
 * Linear regression
 
-## Linear regression 
+# Linear regression 
 The sample in the Jupyter notebook present the linear model below: 
-$$y = x w + b$$ 
+$y = x w + b$ 
 with:   
 * y: a vector of 30 rows   
 * x: a matrix of dimension (30,2)   
