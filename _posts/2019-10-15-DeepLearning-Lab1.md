@@ -16,9 +16,9 @@ This lab covers is basically a <a href="https://pytorch.org/">pyTorch </a> tenso
 * Linear regression
 
 ## Linear regression 
-The sample in the Jupyter notebook present the linear model below: 
-$$y = x w + b$$ 
-with:   
+The sample in the Jupyter notebook present the linear model below:   
+$$y = x w + b$$   
+with:     
 * y: a vector of 30 rows   
 * x: a matrix of dimension (30,2)   
 * b: a constant. But in the formula above we can see it as b * vector of 1 of dimension 30 using broadcasting  
