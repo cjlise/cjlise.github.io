@@ -9,7 +9,7 @@ excerpt: "CART, Decision Tree, Random Forrest, Supervised, Algorithm, Machine Le
 ---
 
 # Titanic dataset analysis with CART and Random Forrest
-The goal is to carry out the Titanic data classification analysis. We will use the [Titanic dataset](https://www.kaggle.com/c/titanic/data) available on {Kaggle](https://www.kaggle.com/) web site. In detail, this is a binary classification problem. The model must be able to predict survival or not with a good accuracy on the test sample. The relevant files for this project are:   
+The goal is to carry out the Titanic data classification analysis. We will use the [Titanic dataset](https://www.kaggle.com/c/titanic/data) available on [Kaggle](https://www.kaggle.com/) web site. In detail, this is a binary classification problem. The model must be able to predict survival or not with a good accuracy on the test sample. The relevant files for this project are:   
 
 * The Rmd [workbook](https://github.com/cjlise/MachineLearning/blob/master/ASML-Project-Ex2-Jlise.Rmd)
 * The workbook [rendering in html](http://htmlpreview.github.com/?https://github.com/cjlise/MachineLearning/blob/master/ASML-Project-Ex2-Jlise.nb.html).   
