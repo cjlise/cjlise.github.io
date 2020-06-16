@@ -1,20 +1,20 @@
 ---
-title: "Airbnb Paris listing data clustering"
-date: 2019-11-09
+title: "Titanic dataset analysis with CART and Random Forrest"
+date: 2020-06-16
 categories: machine-learning
-tags: [Clustering, Unsupervised, Algorithm, Machine Learning, Visualization, R-Language, K-Means, PCA]
+tags: [CART, Decision Tree, Random Forrest, Supervised, Algorithm, Machine Learning, R-Language]
 header: 
    image: "/images/MachineLearning/landscape-4527525_200.jpg"
-excerpt: "Clustering, Unsupervised, Algorithm, Machine Learning, Visualization, R-Language, K-Means, PCA"
+excerpt: "CART, Decision Tree, Random Forrest, Supervised, Algorithm, Machine Learning, R-Language"
 ---
 
-# Airbnb Paris listing data clustering
-This lab presents the step by step clustering analysis of an Airbnb Paris Listing dataset. After some data preprocessing and features engineering, we carry out a first clustering with the Hierarchical Clustering algorithm. Afterwards, we do the same with K-Means method. We then use PCA (Principal Component Analysis) for visualization purpose. The relevant files for this project are:   
-* The Airbnb [dataset](https://github.com/cjlise/MachineLearning/blob/master/AirBnB-Paris-small.Rdata)
-* The Rmd [workbook](https://github.com/cjlise/MachineLearning/blob/master/Airbnb-clustering.Rmd)
-* The workbook [rendering in html](http://htmlpreview.github.com/?https://github.com/cjlise/MachineLearning/blob/master/Airbnb-clustering.html). The github html rendering doesn't display the leaflet interactive map. However you can save [the html](https://github.com/cjlise/MachineLearning/blob/master/Airbnb-clustering.html) file on local and open it in your browser to get the interactive map.  
+# Titanic dataset analysis with CART and Random Forrest
+The goal is to carry out the Titanic data classification analysis. We will use the [Titanic dataset](https://www.kaggle.com/c/titanic/data) available on {Kaggle](https://www.kaggle.com/) web site. In detail, this is a binary classification problem. The model must be able to predict survival or not with a good accuracy on the test sample. The relevant files for this project are:   
+
+* The Rmd [workbook](https://github.com/cjlise/MachineLearning/blob/master/ASML-Project-Ex2-Jlise.Rmd)
+* The workbook [rendering in html](http://htmlpreview.github.com/?https://github.com/cjlise/MachineLearning/blob/master/ASML-Project-Ex2-Jlise.nb.html).   
  
- ![Airbnb Paris Listing](/images/MachineLearning/Airbnb-Paris-Clustering-KMeans-Final.jpg "Airbnb Paris Clustering")
+ ![Airbnb Paris Listing](/images/MachineLearning/Titanic-01.png "Titanic tree with Rattle package")
 
 
 
