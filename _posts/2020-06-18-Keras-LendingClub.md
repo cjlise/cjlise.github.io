@@ -2,10 +2,10 @@
 title: "LendingClub DataSet Analysis with Keras - Tensorflow"
 date: 2020-06-18
 categories: machine-learning
-tags: [Deep Leaning, Keras, TensorFlow, Machine Learning, Classification, Neural Network]
+tags: [Deep Leaning, Keras, TensorFlow, Machine Learning, Classification, Neural Network, Python]
 header: 
    image: "/images/DeepLearning/web-3706561_200.jpg"
-excerpt: "Deep Leaning, Keras, TensorFlow, Machine Learning, Classification, Neural Network"
+excerpt: "Deep Leaning, Keras, TensorFlow, Machine Learning, Classification, Neural Network, Python"
 mathjax: "true"
 ---
 
