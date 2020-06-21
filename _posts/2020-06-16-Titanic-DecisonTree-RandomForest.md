@@ -1,8 +1,8 @@
 ---
-title: "Titanic dataset analysis with CART and Random Forrest"
+title: "Titanic dataset analysis with CART and Random Forest"
 date: 2020-06-16
 categories: machine-learning
-tags: [CART, Decision Tree, Random Forrest, Supervised, Algorithm, Machine Learning, R-Language]
+tags: [CART, Decision Tree, Random Forest, Supervised, Algorithm, Machine Learning, R-Language]
 header: 
    image: "/images/MachineLearning/landscape-4527525_200.jpg"
 excerpt: "CART, Decision Tree, Random Forrest, Supervised, Algorithm, Machine Learning, R-Language"
