@@ -8,7 +8,7 @@ header:
 excerpt: "Simulation, Agent Based Modeling, NetLogo, Diffusion, ABM"
 ---
 
-# Product Adoption Simulation With Network And Broadcast Influence Using NetLogo   
+  
 ## WHAT IS IT?  
 The purpose of this model is to evaluate the adoption of a new product accross a social network. It also take into account broadcast influence. 
 
@@ -33,7 +33,7 @@ Use the NUM-SEED-ADOPTERS slider to define the number of initial adopters. The s
 
 II. Spread the product adoption The product adoption diffusion is controlled by the broadcast-influence and social-influence sliders. You can start or stop the process by clicking on the go button. The process automatically stops when the product is adopted by the whole population. 
 
-The model can be lanched in this [link](https://github.com/cjlise/MachineLearning/blob/master/ABM/ProductAdoptionSocialNetwork-JLise.html).  
+The model can be lanched in this [link](https://github.com/cjlise/MachineLearning/ABM/ProductAdoptionSocialNetwork-JLise.html).  
  
  ![NetLogo Model](/images/MachineLearning/NetLogo-ProductAdoption.jpg "NetLogo Model")
 
