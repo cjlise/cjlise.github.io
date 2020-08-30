@@ -33,7 +33,7 @@ Use the NUM-SEED-ADOPTERS slider to define the number of initial adopters. The s
 
 II. Spread the product adoption The product adoption diffusion is controlled by the broadcast-influence and social-influence sliders. You can start or stop the process by clicking on the go button. The process automatically stops when the product is adopted by the whole population. 
 
-The model can be launched from this [link](http://netlogoweb.org/web?https://github.com/cjlise/MachineLearning/blob/master/ABM/ProductAdoptionSocialNetwork-JLise.nlogo?raw=true).  
+The model can be launched from this [link](http://netlogoweb.org/web?https://github.com/cjlise/MachineLearning/raw/master/ABM/ProductAdoptionSocialNetwork-JLise.nlogo).  
  
  ![NetLogo Model](/images/MachineLearning/NetLogo-ProductAdoption.jpg "NetLogo Model")
 
