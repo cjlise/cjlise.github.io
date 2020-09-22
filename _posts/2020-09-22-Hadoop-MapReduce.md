@@ -103,11 +103,11 @@ yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
 ```
 
 Here is the output that we get after execution: 
-![yarn command output](/images/HadoopSpark/YarnMapReduce.jpg.jpg "yarn command output")
+![yarn command output](/images/HadoopSpark/YarnMapReduce.jpg "yarn command output")
 
 
 And the results: 
-![yarn results](/images/HadoopSpark/YarnMapReduce.jpg.jpg "yarn results")
+![yarn results](/images/HadoopSpark/YarnMapReduce.jpg "yarn results")
 
 
 
