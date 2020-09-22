@@ -9,7 +9,7 @@ excerpt: "Big Data, Distributed Processing, Yarn, Python, Linux, Cloudera"
 ---
 
   
-# Hadoop Map Reduce Example Using Yarn  
+
 The purpose of this example is to show how to carry out a Map Reduce task to find the top used word in the [Beowulf Ebook](https://www.gutenberg.org/cache/epub/16328/pg16328.txt) using Yarn with 2 Python scripts. 
 
 ## Python scripts
