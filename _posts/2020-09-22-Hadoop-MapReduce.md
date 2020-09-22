@@ -107,7 +107,7 @@ Here is the output that we get after execution:
 
 
 And the results: 
-![yarn results](/images/HadoopSpark/YarnMapReduce.jpg "yarn results")
+![yarn results](/images/HadoopSpark/YarnMapReduceResults.jpg "yarn results")
 
 
 

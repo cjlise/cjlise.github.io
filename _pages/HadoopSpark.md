@@ -1,7 +1,7 @@
 ---
 layout: category
 permalink: /categories/hadoop-spark/
-title: "Machine Learning Posts by Tags"
+title: "Hadoop Spark Posts by Tags"
 taxonomy: hadoop-spark
 author_profile: true
 header:
