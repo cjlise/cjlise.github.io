@@ -1,6 +1,6 @@
 ---
 title: "Hadoop Map Reduce Example Using Yarn"
-date: 2020-08-30
+date: 2020-09-22
 categories: hadoop-spark
 tags: [Big Data, Distributed Processing, Yarn, Python, Linux, Cloudera]
 header: 
