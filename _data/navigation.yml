@@ -6,7 +6,8 @@ main:
     url: /categories/machine-learning/
   - title: "Software Engineering"   
     url: /categories/software-engineering/
-
+  - title: "Hadoop Spark"   
+    url: /categories/hadoop-spark/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
