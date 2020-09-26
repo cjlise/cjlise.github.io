@@ -51,10 +51,12 @@ You can also double check with the Docker dashboard:
 
 And the current status can also be checked using the web page [http://localhost:9870](http://localhost:9870):
 
+![Hadoop Overview](/images/HadoopSpark/SetupHadoop-03-Overview.png "Hadoop Overview")
+
 
 ## 3. Testing the Hadoop cluster
 
-We will test the Hadoop cluster running the Wordcount example. 
+We will test the Hadoop cluster running the Word Count example. 
 
 * Open a terminal session on the namenode
 ```bash
