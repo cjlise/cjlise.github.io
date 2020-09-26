@@ -107,6 +107,11 @@ hdfs dfs -cat output/part-r-00000
 ```
 ![Hadoop Output](/images/HadoopSpark/SetupHadoop-06-output.png "Hadoop Output")
 
+* Shutdown the Hadoop cluster by running on the Windows host
+```bash
+docker-compose down
+```
+
 That's all ! 
 
 
