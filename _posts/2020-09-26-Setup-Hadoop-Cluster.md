@@ -1,5 +1,5 @@
 ---
-title: "Setting up an Hadoop cluster on Windows using docker and WSL2"
+title: "Setting up a Hadoop cluster on Windows using Docker and WSL2"
 date: 2020-09-26
 categories: hadoop-spark
 tags: [Big Data, Distributed Processing, Linux, Hadoop, Docker]
