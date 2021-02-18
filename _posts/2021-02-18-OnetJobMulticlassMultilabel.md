@@ -1,5 +1,5 @@
 ---
-title: "Multi-class Multi-label Classification Model based on the O\*NET Job Database"
+title: "Multi-class Multi-label Classification Model based on the ONET Job Database"
 date: 2021-02-18
 categories: machine-learning
 tags: [Classification, Deep Learning, Keras, Tensorflow, Sk-learn, Neural Network, NLP, Machine Learning, Python, Multi-class, Multi-label]
