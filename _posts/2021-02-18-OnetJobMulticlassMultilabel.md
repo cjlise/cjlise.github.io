@@ -13,6 +13,10 @@ This project is a kind of real life use case: there is one database (O\*NET data
 Then we will build a deep learning model using NLP and Keras. And finally we will use this model in a web application that we will deploy on HEROKU using Flask.   
  
 
+
+
+
+
 ## 1. Dataset design and model creation 
 The Jupyter notebook below covers the dataset creation, and the model design.  
 
@@ -24,4 +28,11 @@ The [Web Application](https://thawing-hamlet-30375.herokuapp.com/) using the mod
 
 ![Web App](/images/DeepLearning/projects/onet-webapp.png "Web App")
    
+
+
+
+
+
+
+
 	
