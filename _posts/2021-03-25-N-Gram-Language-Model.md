@@ -234,7 +234,7 @@ Instead of sampling with probabilities, one can also try always taking most like
 
 $$w_{next} \sim {P(w_{next} | X) ^ {1 / \tau} \over \sum_{\hat w} P(\hat w | X) ^ {1 / \tau}}$$
 
-Where $\tau > 0$ is model temperature. If $\tau << 1$, more likely tokens will be sampled with even higher probability while less likely tokens will vanish.
+Where $$\tau > 0$$ is model temperature. If $$\tau << 1$$, more likely tokens will be sampled with even higher probability while less likely tokens will vanish.
 <!-- #endregion -->
 
 ```python
