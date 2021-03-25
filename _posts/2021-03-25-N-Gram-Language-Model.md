@@ -70,12 +70,12 @@ assert sorted(lines, key=len)[2] == \
 
 ### N-Gram Language Model
 
-A language model is a probabilistic model that estimates text probability: the joint probability of all tokens $w_t$ in text $X$: $P(X) = P(w_1, \dots, w_T)$.
+A language model is a probabilistic model that estimates text probability: the joint probability of all tokens $$w_t$$ in text $$X$$: $$P(X) = P(w_1, \dots, w_T)$$.
 
 It can do so by following the chain rule:
 $$P(w_1, \dots, w_T) = P(w_1)P(w_2 \mid w_1)\dots P(w_T \mid w_1, \dots, w_{T-1}).$$ 
 
-The problem with such approach is that the final term $P(w_T \mid w_1, \dots, w_{T-1})$ depends on $n-1$ previous words. This probability is impractical to estimate for long texts, e.g. $T = 1000$.
+The problem with such approach is that the final term $$P(w_T \mid w_1, \dots, w_{T-1})$$ depends on $$n-1$$ previous words. This probability is impractical to estimate for long texts, e.g. $$T = 1000$$.
 
 One popular approximation is to assume that next word only depends on a finite amount of previous words:
 
