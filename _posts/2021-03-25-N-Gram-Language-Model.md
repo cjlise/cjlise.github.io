@@ -286,6 +286,10 @@ for i in range(100):
         
 print(prefix)
 ```
+Here is the output from the model with the prefix 'artificial': 
+> artificial immune system can have a good document format , or phonological components . we suggest that automated health surveillance systems based on spatial - frequency oscillatory artifacts , via dirichlet processes ; recent works that explore partially the search process . the proposed methods can be unconsciously or maliciously introduce biases that models correlation structure ; this article presents a novel feature descriptors . the wasserstein loss ; in this paper , we use the hinge - loss showed to be represented in suitable fragments of a deep neural network ( cnn ) which monsters attempted to improve the sample
+
+
 
 ```python
 prefix = 'bridging the' # <- more of your ideas
@@ -297,7 +301,10 @@ for i in range(100):
         
 print(prefix)
 ```
+Here is the output from the model with the prefix 'bridging the': 
+> bridging the gap between the two - step approach to characterize the information from the best of our approach is that the proposed method is compared to the original image is decomposed into a single machine . _EOS_
 
+  
 <!-- #region -->
 ### Evaluating language models: perplexity
 
