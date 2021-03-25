@@ -6,6 +6,7 @@ tags: [Language Model, NLP, Machine Learning, Python, Text]
 header: 
    image: "/images/MachineLearning/landscape-4527525_200.jpg"
 excerpt: "Language Model, NLP, Machine Learning, Python, Text"
+mathjax: "true"
 ---
 
 ### N-gram language models or how to write scientific papers
