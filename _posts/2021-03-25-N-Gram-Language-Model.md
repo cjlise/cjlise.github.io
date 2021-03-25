@@ -223,11 +223,11 @@ lm = NGramLanguageModel(lines, n=3)
 <!-- #region -->
 The process of generating sequences is... well, it's sequential. You maintain a list of tokens and iteratively add next token by sampling with probabilities.
 
-$ X = [] $
+$$ X = [] $$
 
 __forever:__
-* $w_{next} \sim P(w_{next} | X)$
-* $X = concat(X, w_{next})$
+* $$w_{next} \sim P(w_{next} | X)$$
+* $$X = concat(X, w_{next})$$
 
 
 Instead of sampling with probabilities, one can also try always taking most likely token, sampling among top-K most likely tokens or sampling with temperature. In the latter case (temperature), one samples from
@@ -305,7 +305,8 @@ Perplexity is a measure of how well does your model approximate true probability
 
 To compute perplexity on one sentence, use:
 $$
-    {\mathbb{P}}(w_1 \dots w_N) = P(w_1, \dots, w_N)^{-\frac1N} = \left( \prod_t P(w_t \mid w_{t - n}, \dots, w_{t - 1})\right)^{-\frac1N},
+    {\mathbb{P}}(w_1 \dots w_N) = P(w_1, \dots, w_N)^{-\frac1N} =     
+	\left( \prod_t P(w_t \mid w_{t - n}, \dots, w_{t - 1})\right)^{-\frac1N},
 $$
 
 
