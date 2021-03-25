@@ -9,9 +9,7 @@ excerpt: "Language Model, NLP, Machine Learning, Python, Text"
 mathjax: "true"
 ---
 
-### N-gram language models or how to write scientific papers
-
-We shall train our language model on a corpora of [ArXiv](http://arxiv.org/) articles and see if we can generate a new one!
+The goal of this project is to train a language model on a corpora of [ArXiv](http://arxiv.org/) science articles and see if we can generate a new one! This work is inspired by an exercise from the[NLP course for you ](https://lena-voita.github.io/nlp_course.html).   
 
 ![img](/images/MachineLearning/markus-winkler-write-something-unsplash.jpg)
 
