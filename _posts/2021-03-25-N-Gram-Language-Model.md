@@ -9,7 +9,7 @@ excerpt: "Language Model, NLP, Machine Learning, Python, Text"
 mathjax: "true"
 ---
 
-The goal of this project is to train a language model on a corpora of [ArXiv](http://arxiv.org/) science articles and see if we can generate a new one! This work is inspired by an exercise from the[NLP course for you ](https://lena-voita.github.io/nlp_course.html).   
+The goal of this project is to train a language model on a corpora of [ArXiv](http://arxiv.org/) science articles and see if we can generate a new one! This work is inspired by an exercise from the [NLP course for you ](https://lena-voita.github.io/nlp_course.html).   
 
 ![img](/images/MachineLearning/markus-winkler-write-something-unsplash.jpg)
 
@@ -38,6 +38,9 @@ lines = data.apply(lambda row: row['title'] + ' ; ' + row['summary'], axis=1).to
 
 sorted(lines, key=len)[:3]
 ```
+> ['Differential Contrastive Divergence ; This paper has been retracted.',
+ 'What Does Artificial Life Tell Us About Death? ; Short philosophical essay',
+ 'P=NP ; We claim to resolve the P=?NP problem via a formal argument for P=NP.']
 
 ### Tokenization
 
