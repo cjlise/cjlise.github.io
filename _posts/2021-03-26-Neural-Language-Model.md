@@ -11,11 +11,14 @@ mathjax: "true"
 
 We've checked out statistical approaches to language models in the last [post](https://cjlise.github.io/machine-learning/N-Gram-Language-Model/). Now let's go find out what deep learning has to offer.
 
-<img src='pexels-markus-winkler-AI.jpg' width=800px>
+<img src='/images/DeepLearning/projects/pexels-markus-winkler-AI.jpg' width=800px>
 
 We're gonna use the same dataset as before, except this time we build a language model that's character-level, not word level. Before you go:
-* The link to download data: https://www.kaggle.com/neelshah18/arxivdataset/.
-* This project uses TensorFlow v2.0: this is [how you install it](https://www.tensorflow.org/install); and that's [how you use it](https://www.tensorflow.org/tutorials).
+* The data can be downloaded on [Kaggle](https://www.kaggle.com/neelshah18/arxivdataset/).
+* This project uses TensorFlow v2.0: this is [how you install it](https://www.tensorflow.org/install); and that's [how you use it](https://www.tensorflow.org/tutorials).    
+
+This post is inspired by a homework from the course [NLP For You](https://lena-voita.github.io/nlp_course.html).
+
 
 ```python
 import numpy as np
@@ -98,9 +101,9 @@ print(to_matrix(dummy_lines))
 
 
 ```
-> [[ 1 66 67 68  0  0  0  0  0  0  0  0  0  0  0]
->  [ 1 66 67 66 68 66 67 66  0  0  0  0  0  0  0]
->  [ 1 66 67 68 18 19 20 21 22 23 24 25 26 17  0]]
+> [[ 1 66 67 68  0  0  0  0  0  0  0  0  0  0  0]     
+>  [ 1 66 67 66 68 66 67 66  0  0  0  0  0  0  0]    
+>  [ 1 66 67 68 18 19 20 21 22 23 24 25 26 17  0]]    
  
 
 
@@ -219,7 +222,7 @@ assert np.allclose(dummy_logits[:, :3] - dummy_logits_2[:, :3], 0), "your model'
     " You can also get this error if your model is not deterministic (e.g. dropout). Disable it for this test."
 ```
 
-We can now tune our network's parameters to minimize categorical crossentropy over training dataset $D$:
+We can now tune our network's parameters to minimize categorical crossentropy over training dataset $$D$$:
 
 $$ L = {\frac1{|D|}} \sum_{X \in D} \sum_{x_i \in X} - \log p(x_t \mid x_1, \dots, x_{t-1}, \theta) $$
 
@@ -321,7 +324,7 @@ optimizer = keras.optimizers.Adam()
 dev_history.append((0, score_lines(model, dev_lines, batch_size)))
 print("Sample before training:", generate(model, 'Bridging'))
 ```
-<img src='/images/DeepLearning/projects/SampleBT-CNN.png'>
+<img src='/images/DeepLearning/projects/SampleBT-CNN.png' width=600px>
 
 ```python
 from IPython.display import clear_output
@@ -357,7 +360,7 @@ for i in trange(len(train_history), 5000):
 ```
 
 Here are some outputs from the training process: 
-* At 28%:  <img src='/images/DeepLearning/projects/LangMod-CNN-28p.png'>
+* At 28%:  <img src='/images/DeepLearning/projects/LangMod-CNN-28p.png' width=800px>
 * At 75%:  <img src='/images/DeepLearning/projects/LangMod-CNN-75p.png'>
 * At 100%: <img src='/images/DeepLearning/projects/LangMod-CNN-100p.png'>
 
@@ -373,16 +376,16 @@ for i in range(10):
 ```
 
 > Final dev loss: tf.Tensor(1.9916248, shape=(), dtype=float32)
->  Corfertive bich the sear asting for the the extend of the propoctien is desent the prover and the th
->  In this the constres of the compution and of the a the that neals and and provese the on at mation a
->  A the continting of a devising as orterd of this propertem and assod tisting and of entione a denel 
->  Sy DES) to procods nor and and and a teut detrion and and porerach from sesting proves and tu the re
->  The CAnstwisk and stow the retricullact and intation at entlistic that in the intrace the camation o
->  or extrons ; In exlllent nears ; The exbectlosition the porsention this in the the and candes of tra
->  The Coustring ; This in the proved as from the orveric work with the a network which anstrocion to t
->  Herents reproce in and has in that as a datic problem and conaliges unting is the the searling datio
->  A coxestion and rensent macheution of the reilic propering bethtieg of concon and mather model the p
->  A Shose we weis a proprome and learning and that sor as a she approal and as an of feature the menti
+>  Corfertive bich the sear asting for the the extend of the propoctien is desent the prover and the th   
+>  In this the constres of the compution and of the a the that neals and and provese the on at mation a   
+>  A the continting of a devising as orterd of this propertem and assod tisting and of entione a denel    
+>  Sy DES) to procods nor and and and a teut detrion and and porerach from sesting proves and tu the re   
+>  The CAnstwisk and stow the retricullact and intation at entlistic that in the intrace the camation o   
+>  or extrons ; In exlllent nears ; The exbectlosition the porsention this in the the and candes of tra   
+>  The Coustring ; This in the proved as from the orveric work with the a network which anstrocion to t   
+>  Herents reproce in and has in that as a datic problem and conaliges unting is the the searling datio   
+>  A coxestion and rensent macheution of the reilic propering bethtieg of concon and mather model the p   
+>  A Shose we weis a proprome and learning and that sor as a she approal and as an of feature the menti   
 
 This is not so bad but there are still a lot words that don't mean anything. 
 Can we improve this using a RNN type neural network?   
@@ -482,7 +485,7 @@ optimizer = keras.optimizers.Adam()
 dev_history.append((0, score_lines(model, dev_lines, batch_size)))
 print("Sample before training:", generate(model, 'Bridging'))
 ```
-<img src='/images/DeepLearning/projects/LangMod-RNN-28p.png'>
+<img src='/images/DeepLearning/projects/SampleBT-RNN.png' width=600px>
 
 ```python
 for i in trange(len(train_history), 5000):
@@ -525,16 +528,16 @@ for i in range(10):
     print(generate(model, temperature=0.5))
 ```
 > Final dev loss: tf.Tensor(1.1723021, shape=(), dtype=float32)
->  A Fast States well Control Set ; The parailed spoces of the specifically, we propose a new problem a
->  Detection with Theoretic A Complete Robust Optimal Machine Learning ; In a semantic controlled and i
->  Automatic Complete Constraint Segmentation of State-of-the-are Linear Neural Networks ; In this pape
->  A Generalized Problem of Programming and Image Sequence Signal Binary Learning ; In this paper prese
->  A Particular Prediction Statistical Search Agent Subspace Recognition ; We introduce a non-linear en
->  A New Synthesis Detection for Subset Algorithm for Processes ; In this paper, we propose a new parti
->  On the Personal method An and Particular Component Analysis ; In this paper, we propose a novel assu
->  Explore Multi-Image Clustering Transformation ; We propose a new multi-limen discrete datasets is a 
->  Full Control Recognition of Stationarization ; We analyze the structure of different task of a syste
->  The Sparse Learning Networks for Relation ; This paper, we propose a novel and solution of an intere
+>  A Fast States well Control Set ; The parailed spoces of the specifically, we propose a new problem a   
+>  Detection with Theoretic A Complete Robust Optimal Machine Learning ; In a semantic controlled and i  
+>  Automatic Complete Constraint Segmentation of State-of-the-are Linear Neural Networks ; In this pape  
+>  A Generalized Problem of Programming and Image Sequence Signal Binary Learning ; In this paper prese  
+>  A Particular Prediction Statistical Search Agent Subspace Recognition ; We introduce a non-linear en  
+>  A New Synthesis Detection for Subset Algorithm for Processes ; In this paper, we propose a new parti  
+>  On the Personal method An and Particular Component Analysis ; In this paper, we propose a novel assu  
+>  Explore Multi-Image Clustering Transformation ; We propose a new multi-limen discrete datasets is a    
+>  Full Control Recognition of Stationarization ; We analyze the structure of different task of a syste   
+>  The Sparse Learning Networks for Relation ; This paper, we propose a novel and solution of an intere   
 
 ### Alternative sampling strategies
 
