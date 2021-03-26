@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 Working on character level means that we don't need to deal with large vocabulary or missing words. Heck, we can even keep uppercase words in text! The downside, however, is that all our sequences just got a lot longer.
 
 However, we still need special tokens:
-* Begin Of Sequence  (__BOS__) - this token is at the start of each sequence. We use it so that we always have non-empty input to our neural network.
+* Begin Of Sequence  (__BOS__) - this token is at the start of each sequence. We use it so that we always have non-empty input to our neural network. $$P(x_t) = P(x_1 | BOS)$$   
 * End Of Sequence (__EOS__) - you guess it... this token is at the end of each sequence. The catch is that it should __not__ occur anywhere else except at the very end. If our model produces this token, the sequence is over.
 
 
@@ -324,7 +324,7 @@ optimizer = keras.optimizers.Adam()
 dev_history.append((0, score_lines(model, dev_lines, batch_size)))
 print("Sample before training:", generate(model, 'Bridging'))
 ```
-<img src='/images/DeepLearning/projects/SampleBT-CNN.png' width=600px>
+<img src='/images/DeepLearning/projects/SampleBT-CNN.png' width=800px>
 
 ```python
 from IPython.display import clear_output
@@ -361,8 +361,8 @@ for i in trange(len(train_history), 5000):
 
 Here are some outputs from the training process: 
 * At 28%:  <img src='/images/DeepLearning/projects/LangMod-CNN-28p.png' width=800px>
-* At 75%:  <img src='/images/DeepLearning/projects/LangMod-CNN-75p.png'>
-* At 100%: <img src='/images/DeepLearning/projects/LangMod-CNN-100p.png'>
+* At 75%:  <img src='/images/DeepLearning/projects/LangMod-CNN-75p.png' width=800px>
+* At 100%: <img src='/images/DeepLearning/projects/LangMod-CNN-100p.png' width=800px>
 
 We see the improvements in the generated text during the training process. 
 
@@ -485,7 +485,7 @@ optimizer = keras.optimizers.Adam()
 dev_history.append((0, score_lines(model, dev_lines, batch_size)))
 print("Sample before training:", generate(model, 'Bridging'))
 ```
-<img src='/images/DeepLearning/projects/SampleBT-RNN.png' width=600px>
+<img src='/images/DeepLearning/projects/SampleBT-RNN.png' width=800px>
 
 ```python
 for i in trange(len(train_history), 5000):
@@ -517,9 +517,9 @@ for i in trange(len(train_history), 5000):
 ```
 
 Here are some outputs from the training process: 
-* At 28%:  <img src='/images/DeepLearning/projects/LangMod-RNN-25p.png'>
-* At 75%:  <img src='/images/DeepLearning/projects/LangMod-RNN-76p.png'>
-* At 100%: <img src='/images/DeepLearning/projects/LangMod-RNN-100p.png'>
+* At 28%:  <img src='/images/DeepLearning/projects/LangMod-RNN-25p.png' width=800px>
+* At 75%:  <img src='/images/DeepLearning/projects/LangMod-RNN-76p.png' width=800px>
+* At 100%: <img src='/images/DeepLearning/projects/LangMod-RNN-100p.png' width=800px>
 
 ```python
 assert np.mean(train_history[:10], axis=0)[1] > np.mean(train_history[-10:], axis=0)[1], "The model didn't converge."
@@ -549,7 +549,7 @@ __Top-k sampling:__ on each step, sample the next token from __k most likely__ c
 Suppose $$k=3$$ and the token probabilities are $$p=[0.1, 0.35, 0.05, 0.2, 0.3]$$. You first need to select $$k$$ most likely words and set the probability of the rest to zero: $$\hat p=[0.0, 0.35, 0.0, 0.2, 0.3]$$ and re-normalize: 
 $$p^*\approx[0.0, 0.412, 0.0, 0.235, 0.353]$$.
 
-__Nucleus sampling:__ similar to top-k sampling, but this time we select $k$ dynamically. In nucleous sampling, we sample from top-__N%__ fraction of the probability mass.
+__Nucleus sampling:__ similar to top-k sampling, but this time we select $$k$$ dynamically. In nucleous sampling, we sample from top-__N%__ fraction of the probability mass.
 
 Using the same  $$p=[0.1, 0.35, 0.05, 0.2, 0.3]$$ and nucleous N=0.9, the nucleous words consist of:
 1. most likely token $$w_2$$, because $$p(w_2) < N$$
