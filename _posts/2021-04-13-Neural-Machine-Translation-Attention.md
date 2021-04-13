@@ -436,8 +436,7 @@ Given encoder sequence $$ h^e_0, h^e_1, h^e_2, ..., h^e_T$$ and a single decoder
 
 * Compute logits with a 2-layer neural network
 $$a_t = linear_{out}(tanh(linear_{e}(h^e_t) + linear_{d}(h_d)))$$
-* Get probabilities from logits, 
-$$ p_t = {{e ^ {a_t}} \over { \sum_\tau e^{a_\tau} }} $$
+* Get probabilities from logits, $$ p_t = {e ^ {a_t}} \over { \sum_\tau e^{a_\tau} } $$
 
 * Add up encoder states with probabilities to get __attention response__
 $$ attn = \sum_t p_t \cdot h^e_t $$
@@ -694,10 +693,11 @@ for _ in trange(25000):
 
 ```
 
-```python
-#<measure final BLEU>
-assert np.mean(metrics['dev_bleu'][-10:], axis=0)[1] > 15, "We kind of need a higher bleu BLEU from you. Kind of right now."    
-```
+Here are the outputs from the training step: 
+![img](/images/DeepLearning/projects/AttentionTraining.png)   
+We see that the loss converged, and that the blue metric is above 23 (to be compared to 15 for the base model). 
+Therefore we have  a better model. Let's check with a few samples.
+
 
 ```python
 for inp_line, trans_line in zip(dev_inp[::500], model.translate_lines(dev_inp[::500])[0]):
@@ -705,52 +705,11 @@ for inp_line, trans_line in zip(dev_inp[::500], model.translate_lines(dev_inp[::
     print(trans_line)
     print()
 ```
-
-```python
-# Saving trained model
-import os
-save_path = os.path.abspath(os.getcwd())
-save_path = os.path.join(save_path, 'attn_model')
-os.mkdir(save_path)
-
-print('Saving Attention model...')
-tf.saved_model.save(model, save_path)
-
-```
-
-```python
-#Loading model
-imported_model = tf.saved_model.load(save_path)
-```
-
-```python
-print("Model has {} trainable variables: {}, ...".format(
-          len(imported_model.trainable_variables),
-          ", ".join([v.name for v in imported_model.trainable_variables[:5]])))
-```
-
-```python
-trainable_variable_ids = {id(v) for v in imported_model.trainable_variables}
-non_trainable_variables = [v for v in imported_model.variables
-                           if id(v) not in trainable_variable_ids]
-print("Model also has {} non-trainable variables: {}, ...".format(
-          len(non_trainable_variables),
-          ", ".join([v.name for v in non_trainable_variables[:3]])))
-```
-
-Here are the outputs from the training step: 
-![img](/images/DeepLearning/projects/AttentionTraining.png)   
-We see that the loss converged, and that the blue metric is above 23 (to be compared to 15 for the base model). 
-Therefore we have  a better model. Let's check with a few samples.
-
-```python
-for inp_line, trans_line in zip(dev_inp[::500], imported_model.translate_lines(dev_inp[::500])[0]):
-    print(inp_line)
-    print(trans_line)
-    print()
-```
 ![img](/images/DeepLearning/projects/AttentionTest.png)
 Here all the English sentences generated seems to be correct. There is no big obvious mistakes like with the base model. 
+
+
+
 
 
 ### Visualizing model attention
