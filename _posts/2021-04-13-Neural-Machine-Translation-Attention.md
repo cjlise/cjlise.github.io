@@ -527,7 +527,9 @@ You can now use the attention layer to build a network. The simplest way to impl
 ![img](/images/DeepLearning/projects/6fKHlHb.png)
 _image from distill.pub [article](https://distill.pub/2016/augmented-rnns/)_
 
-On every step, use __previous__ decoder state to obtain attention response. Then feed concat this response to the inputs ~~of next attention layer~~ of the decoder.
+On every step, use __previous__ decoder state to obtain attention response. Then feed concat this response to the inputs ~~of next attention layer~~ of the next decoder step:
+
+![img](/images/DeepLearning/projects/3-min.png)
 
 The key implementation detail here is __model state__. Put simply, you can add any tensor into the list of `encode` outputs. You will then have access to them at each `decode` step. This may include:
 * Last RNN hidden states (as in basic model)
