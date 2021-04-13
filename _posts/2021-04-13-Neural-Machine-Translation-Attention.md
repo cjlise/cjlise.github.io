@@ -44,7 +44,7 @@ One popular approach is called [Byte Pair Encoding](https://github.com/rsennrich
 
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="CfvojjHQlrsU"
+```python
 #!pip3 install tensorflow-gpu>=2.0.0
 #!pip3 install subword-nmt &> log
 # !wget https://www.dropbox.com/s/yy2zqh34dyhv07i/data.txt?dl=1 -O data.txt
@@ -53,7 +53,7 @@ One popular approach is called [Byte Pair Encoding](https://github.com/rsennrich
 # thanks to tilda and deephack teams for the data, Dmitry Emelyanenko for the code :)
 ```
 
-```python colab={} colab_type="code" id="g9kP0SdxlrsY"
+```python 
 from nltk.tokenize import WordPunctTokenizer
 from subword_nmt.learn_bpe import learn_bpe
 from subword_nmt.apply_bpe import BPE
@@ -85,7 +85,7 @@ for lang in ['en', 'ru']:
 We now need to build vocabularies that map strings to token ids and vice versa. We're gonna need these fellas when we feed training data into model or convert output matrices into words.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="CmTy_m_olrsb"
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -103,13 +103,13 @@ for i in range(3):
     print('out:', train_out[i], end='\n\n')
 ```
 
-```python colab={} colab_type="code" id="vipg4O61lrsg"
+```python 
 from utils import Vocab
 inp_voc = Vocab.from_lines(train_inp)
 out_voc = Vocab.from_lines(train_out)
 ```
 
-```python colab={} colab_type="code" id="cwOoHfuhlrsi"
+```python 
 # Here's how you cast lines into ids and backwards.
 batch_lines = sorted(train_inp, key=len)[5:10]
 batch_ids = inp_voc.to_matrix(batch_lines)
@@ -127,7 +127,7 @@ print(batch_lines_restored)
 Draw source and translation length distributions to estimate the scope of the task.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="TLLl9cSNlrsl"
+```python 
 plt.figure(figsize=[8, 4])
 plt.subplot(1, 2, 1)
 plt.title("source length")
@@ -144,7 +144,7 @@ plt.hist(list(map(len, map(str.split, train_out))), bins=20);
 The code below contains a template for a simple encoder-decoder model: single GRU encoder/decoder, no attention or anything.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="pd_rDRm9lrso"
+```python 
 import tensorflow as tf
 assert tf.__version__.startswith('2'), "Current tf version: {}; required: 2.0.*".format(tf.__version__)
 L = tf.keras.layers
@@ -152,7 +152,7 @@ keras = tf.keras
 from utils import infer_length, infer_mask
 ```
 
-```python colab={} colab_type="code" id="wgfN5-F7lrst"
+```python 
 class BasicModel(L.Layer):
     def __init__(self, inp_voc, out_voc, emb_size=64, hid_size=128):
         """
@@ -252,7 +252,7 @@ class BasicModel(L.Layer):
 
 ```
 
-```python colab={} colab_type="code" id="_aGkMAU0BtB6"
+```python 
 model = BasicModel(inp_voc, out_voc)
 ```
 
@@ -274,7 +274,7 @@ $$ L = {\frac1{|D|}} \sum_{X, Y \in D} \sum_{y_t \in Y} - \log p(y_t \mid y_1, \
 where    $$|D|$$ is the __total length of all sequences__, including BOS and first EOS, but excluding PAD.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="c8XPV8sWlrs5"
+```python 
 
 def compute_loss(model, inp, out, **flags):
     """
@@ -304,7 +304,7 @@ def compute_loss(model, inp, out, **flags):
     return tf.reduce_sum(logp_out * mask)/tf.cast(tf.reduce_sum(infer_length(inp, inp_voc.eos_ix)), tf.float32) # scalar
 ```
 
-```python colab={} colab_type="code" id="ME_LWUeklrs7"
+```python 
 dummy_loss = compute_loss(model, dummy_inp, dummy_out)
 print("Loss:", dummy_loss)
 assert np.allclose(dummy_loss, 8.425, rtol=0.1, atol=0.1), "We're sorry for your loss"
@@ -318,7 +318,7 @@ Machine translation is commonly evaluated with [BLEU](https://en.wikipedia.org/w
 While BLEU [has many drawbacks](http://www.cs.jhu.edu/~ccb/publications/re-evaluating-the-role-of-bleu-in-mt-research.pdf), it still remains the most commonly used metric and one of the simplest to compute.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="Gb1-PhKIlrs-"
+```python
 from nltk.translate.bleu_score import corpus_bleu
 def compute_bleu(model, inp_lines, out_lines, bpe_sep='@@ ', **flags):
     """
@@ -334,7 +334,7 @@ def compute_bleu(model, inp_lines, out_lines, bpe_sep='@@ ', **flags):
         ) * 100
 ```
 
-```python colab={} colab_type="code" id="gZvfid1RlrtA"
+```python 
 compute_bleu(model, dev_inp, dev_out)
 ```
 
@@ -344,7 +344,7 @@ compute_bleu(model, dev_inp, dev_out)
 Training encoder-decoder models isn't that different from any other models: sample batches, compute loss, backprop and update.
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="yfwIaixHlrtI"
+```python 
 from IPython.display import clear_output
 from tqdm import tqdm, trange
 metrics = {'train_loss': [], 'dev_bleu': [] }
@@ -356,7 +356,7 @@ batch_size = 32
 
  
 
-```python colab={} colab_type="code" id="LlDT6eDUlrtL"
+```python 
 for _ in trange(25000):
     step = len(metrics['train_loss']) + 1
     batch_ix = np.random.randint(len(train_inp), size=batch_size)
@@ -389,7 +389,7 @@ for _ in trange(25000):
 ```
 
 
-```python colab={} colab_type="code" id="2ahuhKVhlrtP"
+```python 
 assert np.mean(metrics['dev_bleu'][-10:], axis=0)[1] > 15, "We kind of need a higher bleu BLEU from you. Kind of
  right now."
 ```
@@ -538,7 +538,7 @@ The key implementation detail here is __model state__. Put simply, you can add a
 _There are, of course, alternative ways to wire attention into your network and different kinds of attention. Take a look at [this](https://arxiv.org/abs/1609.08144), [this](https://arxiv.org/abs/1706.03762) and [this](https://arxiv.org/abs/1808.03867) for ideas. And for image captioning/im2latex there's [visual attention](https://arxiv.org/abs/1502.03044)_
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="NCKPB5JmcE6j"
+```python 
 class AttentiveModel(BasicModel):
     def __init__(self, name, inp_voc, out_voc,
                  emb_size=64, hid_size=128, attn_size=128):
@@ -655,7 +655,7 @@ assert all(dummy_logits[:, 0].numpy().argmax(-1) == out_voc.bos_ix), "first step
 We will reuse the infrastructure we've built for the regular model. 
 <!-- #endregion -->
 
-```python colab={} colab_type="code" id="-YMHPgZxcFaQ"
+```python 
 #<create AttentiveModel and training utilities>
 model = AttentiveModel("AttentionModel", inp_voc, out_voc)
 
