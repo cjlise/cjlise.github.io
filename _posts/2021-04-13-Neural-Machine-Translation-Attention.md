@@ -256,7 +256,7 @@ class BasicModel(L.Layer):
 model = BasicModel(inp_voc, out_voc)
 ```
 
-```python colab={} colab_type="code" id="-Cmv9Lrulrs3"
+```python 
 dummy_inp = tf.convert_to_tensor(inp_voc.to_matrix(train_inp[:3]))
 dummy_out = tf.convert_to_tensor(out_voc.to_matrix(train_out[:3]))
 dummy_logits = model(dummy_inp, dummy_out)
@@ -399,7 +399,7 @@ Here are the outputs from the training step:
 We see that there is convergence for the loss function. And at the end of the training the blue metric is above 15. 
 
 
-```python colab={} colab_type="code" id="KyaHOpealrtS"
+```python 
 for inp_line, trans_line in zip(dev_inp[::500], model.translate_lines(dev_inp[::500])[0]):
     print(inp_line)
     print(trans_line)
