@@ -437,7 +437,7 @@ Given encoder sequence $$ h^e_0, h^e_1, h^e_2, ..., h^e_T$$ and a single decoder
 * Compute logits with a 2-layer neural network
 $$a_t = linear_{out}(tanh(linear_{e}(h^e_t) + linear_{d}(h_d)))$$
 * Get probabilities from logits,       
-$$ p_t $$  = $${{e ^ {a_t}} \over { \sum_\tau e^{a_\tau} } } $$
+$$ p_t $$  = $${e ^ {a_t}} \over { \sum_\tau e^{a_\tau} }$$
 
 * Add up encoder states with probabilities to get __attention response__     
 $$ attn = \sum_t p_t \cdot h^e_t $$
