@@ -91,7 +91,7 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-```python colab={} colab_type="code" id="8PskgBSxlrsd"
+```python
 data_inp = np.array(open('./train.bpe.ru', encoding="utf8").read().split('\n'))
 data_out = np.array(open('./train.bpe.en', encoding="utf8").read().split('\n'))
 
